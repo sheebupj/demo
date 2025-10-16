@@ -1,11 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.dto.StudentDTO;
+import com.example.demo.dto.StudentDTO;
 import com.example.demo.dao.StudentRepository;
 import com.example.demo.model.Student;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
