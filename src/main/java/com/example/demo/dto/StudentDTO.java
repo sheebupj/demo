@@ -38,4 +38,11 @@ public class StudentDTO {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public StudentDTO(Integer id, String name, Integer age, String address) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
 }
