@@ -45,4 +45,7 @@ public class StudentDTO {
         this.age = age;
         this.address = address;
     }
+
+    public StudentDTO() {
+    }
 }

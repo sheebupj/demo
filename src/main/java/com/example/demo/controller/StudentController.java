@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.CustomerDTO;
 import com.example.demo.dto.StudentDTO;
+import com.example.demo.service.CustomerSeervice;
 import com.example.demo.service.Studentservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,9 @@ public class StudentController {
 
     @Autowired
     Studentservice service;
+
+    @Autowired
+    CustomerSeervice customerSeervice;
 
     @PostMapping("/saveStudents")
     public ResponseEntity<StudentDTO> saveStudent(@RequestBody StudentDTO studentDTO ){
@@ -37,5 +42,16 @@ public class StudentController {
         StudentDTO updated=service.modifyStudents(id,stuDto);
         return ResponseEntity.ok(updated);
     }
+    @GetMapping("/useragent")
+    public String getUserAgent(@RequestHeader("User-Agent") String userAgent) {
+        return "User-Agent: " + userAgent;
+    }
+
+    @GetMapping("/allcustomers")
+    public ResponseEntity<List<CustomerDTO>> getAllCustomers(){
+        List<CustomerDTO> customerDTOList=customerSeervice.getAllCustomers();
+        return ResponseEntity.ok(customerDTOList);
+    }
+
 
 }

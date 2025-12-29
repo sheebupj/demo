@@ -1,0 +1,7 @@
+package com.example.demo.dao;
+
+import com.example.demo.model.Customers;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CustomerRepository extends JpaRepository<Customers,Integer> {
+}
